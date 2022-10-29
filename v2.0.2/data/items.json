@@ -1,0 +1,36 @@
+{
+	"items": [
+		{
+			"item_name": "ガチャ運の御守り",
+			"icon_url": "https://i.imgur.com/YM1rSxz.png",
+      "item_emoji": "<:gatcha:910992880997380107>",
+			"description": "ガチャの神様の機嫌を取り、引きを良くする御守り。",
+			"buy_price": 100,
+			"sell_price": 80
+		},
+		{
+			"item_name": "戦闘運の御守り",
+			"icon_url": "https://i.imgur.com/aneOfCI.png",
+		  "item_emoji": "<:sentou:910992894796636190>",
+			"description": "戦闘に武運を授ける御守り。",
+			"buy_price": 100,
+			"sell_price": 80
+		},
+		{
+			"item_name": "資源運の御守り",
+			"icon_url": "https://i.imgur.com/4DHx1Ps.png",
+		  "item_emoji": "<:shigen:910992906792353892>",
+			"description": "資源へ導き、争いを遠ざける御守り",
+			"buy_price": 100,
+			"sell_price": 80
+		},
+		{
+			"item_name": "リアル運の御守り",
+			"icon_url": "https://i.imgur.com/dPhBAAT.png",
+		  "item_emoji": "<:real:910992930871844885>",
+			"description": "運が悪くてリアルが大変な人に、救いの手を差し伸べる。",
+			"buy_price": 150,
+			"sell_price": 125
+		}
+	] 	
+}

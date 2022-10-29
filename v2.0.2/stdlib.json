@@ -1,0 +1,100 @@
+{
+  "name": "edfbox/edf-basics",
+  "timeout": 10000,
+  "connector": false,
+  "events": {
+    "functions/events/discord/bot_mention.js": {
+      "name": "discord.bot_mention"
+    },
+    "functions/events/autocode/self/deployed.js": {
+      "name": "autocode.self.deployed"
+    },
+    "functions/events/discord/guild/member/welcome.js": {
+      "name": "discord.guild.member.add"
+    },
+    "functions/events/discord/message/message.js": {
+      "name": "discord.message.create"
+    },
+    "functions/events/discord/message/button/buy.js": {
+      "name": "discord.message.button.interaction",
+      "subtype": {
+        "custom_id": "buy"
+      }
+    },
+    "functions/events/discord/message/button/sell.js": {
+      "name": "discord.message.button.interaction",
+      "subtype": {
+        "custom_id": "sell"
+      }
+    },
+    "functions/events/scheduler/morning.js": {
+      "name": "scheduler.daily",
+      "subtype": {
+        "time": "07:00 (7:00am)",
+        "timezone": "Asia — Tokyo, JP (+09:00)"
+      }
+    },
+    "functions/events/scheduler/night.js": {
+      "name": "scheduler.daily",
+      "subtype": {
+        "time": "00:00 (12:00am)",
+        "timezone": "Asia — Tokyo, JP (+09:00)"
+      }
+    },
+    "functions/events/scheduler/afternoon.js": {
+      "name": "scheduler.daily",
+      "subtype": {
+        "time": "15:00 (3:00pm)",
+        "timezone": "Asia — Tokyo, JP (+09:00)"
+      }
+    },
+    "functions/events/discord/command/profile.js": {
+      "name": "discord.command",
+      "subtype": {
+        "command": "profile"
+      }
+    },
+    "functions/events/discord/command/stamp.js": {
+      "name": "discord.command",
+      "subtype": {
+        "command": "stamp"
+      }
+    },
+    "functions/events/discord/command/admin.js": {
+      "name": "discord.command",
+      "subtype": {
+        "command": "admin"
+      }
+    },
+    "functions/events/discord/command/bag.js": {
+      "name": "discord.command",
+      "subtype": {
+        "command": "bag"
+      }
+    },
+    "functions/events/discord/command/balance.js": {
+      "name": "discord.command",
+      "subtype": {
+        "command": "balance"
+      }
+    }
+  },
+  "env": [
+    {
+      "name": "GENERAL_DATABASE",
+      "description": "Database which contains the general data."
+    },
+    {
+      "name": "BG_DATABASE",
+      "description": "Database which contains the data of /Profile command background."
+    },
+    {
+      "name": "ACCESSORY_DATABASE",
+      "description": "Database which contains the data of /Profile command accessories."
+    },
+    {
+      "name": "BAG_DATABASE",
+      "description": "Database which contains the all item own by members."
+    }
+  ]
+}

@@ -1,0 +1,14 @@
+{
+  "name": "edf-basics",
+  "author": "Jacob Lee <jacob@polybit.com>",
+  "publish": false,
+  "dependencies": {
+    "lib": "latest",
+    "canvas": "^2.10.1",
+    "jimp": "^0.16.2",
+    "canvas-economica": "^1.0.2",
+    "editor-canvas": "^0.2.1",
+    "canvas-hansans": "^1.0.0",
+    "qrcode": "^1.5.1"
+  }
+}
