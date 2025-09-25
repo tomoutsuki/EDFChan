@@ -4,7 +4,8 @@
   "description": "MMORPG Assistant Discord Bot",
   "main": "src/bot.js",
   "scripts": {
-    "test": "test"
+    "reset": "node src/reset.js",
+    "start": "node src/bot.js"
   },
   "repository": {
     "type": "git",
@@ -30,7 +31,7 @@
     "dotenv": "^16.3.1",
     "editor-canvas": "^0.2.3",
     "jimp": "^0.22.10",
-    "mongoose": "^7.4.1",
+    "mongoose": "^8.18.2",
     "qrcode": "^1.5.3"
   }
 }

@@ -2,7 +2,6 @@ const mongoose = require('mongoose');
 const symbol = "<:edf_coin:1030703934010036254>";
 
 module.exports = async (message, result, Member) => {
-
     let salary = parseInt(result.salary, 10);
     let current_credit = parseInt(result.credit, 10);
 

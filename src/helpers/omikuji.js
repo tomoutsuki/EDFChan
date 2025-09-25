@@ -2,7 +2,7 @@ const fs = require('fs');
 const mongoose = require('mongoose');
 
 module.exports = async (message, result) => {
-    const rawShips = fs.readFileSync('./data/shipdata.json');
+    const rawShips = fs.readFileSync('./src/data/shipdata.json');
     const Ships = JSON.parse(rawShips);
     
     const omikujiList = [

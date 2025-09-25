@@ -45,10 +45,6 @@ mongoose
     })
     .catch((error) => console.error(error));
 
-client.on('ready', () => {
-    console.log(`Logged in as ${client.user.tag}`);
-});
-
 client.on('messageCreate', async (message) => {
     if (message.author.bot) return;
     if (!message.content.startsWith('!')) return;
@@ -56,10 +52,59 @@ client.on('messageCreate', async (message) => {
     const [command, ...args] = message.content.substring(1).split(' ');
     
     const result = await Member.findOne({user_id: message.author.id});
+    
+
+    // Handle registration for unregistered users
+    if (command.toUpperCase() === "REGISTER") {
+        if (result) {
+            message.channel.send(`${result.nickname}さん、あなたはすでに登録済みです！`);
+            return;
+        }
+        
+        try {
+            // Get the highest member_id to create a new unique one
+            const lastMember = await Member.findOne().sort({member_id: -1});
+            const newMemberId = lastMember ? lastMember.member_id + 1 : 1;
+            
+            const newMember = new Member({
+                member_id: newMemberId,
+                user_id: message.author.id,
+                join_date: new Date(),
+                nickname: message.author.username,
+                level: 1,
+                credit: 1000, // Starting credit
+                affiliation: "EDF本司令部 歴戦の司令官",
+                salary: 100, // Starting salary
+                login_streak: 0,
+                xp: 0,
+                salary_claimed: "FALSE",
+                omikuji_played: "FALSE",
+                bg_id: 1, // Default background
+                acc_id: 1, // Default accessory
+            });
+            
+            await newMember.save();
+            
+            message.channel.send(`🎉 ${message.author.username}さん、EDFへようこそ！登録が完了しました！\n` +
+                               `初期クレジット: <:edf_coin:1030703934010036254>1000\n` +
+                               `初期レベル: 1\n` +
+                               `所属: EDF本司令部 司令官\n\n` +
+                               `!helpでコマンド一覧を確認できます！`);
+            
+        } catch (error) {
+            console.error('Registration error:', error);
+            message.channel.send('登録中にエラーが発生しました。しばらく時間をおいて再度お試しください。');
+        }
+        return;
+    }
+
+    // Check if user is registered for other commands
+    if (!result) {
+        message.channel.send('申し訳ありません、あなたはまだ登録をしていないようです！\n!registerと送信して登録してください！');
+        return;
+    }
+    
     console.log(result.nickname, "used the command", command, ".");
-
-    if (!result) message.channel.send('申し訳ありません、あなたはまだ登録をしていないようです！');
-
     const nickname = result.nickname;
     // Command format:
     // !<command> <args[0]> <args[1]> ...
