@@ -18,10 +18,10 @@ const canvas = Canvas.createCanvas(934, 282);
 const qrc = Canvas.createCanvas(200, 200);
 
 const ctx = canvas.getContext("2d");
-const qrcctx = qrc.getContext("2d");
+const qrcctx = qrc.getContext("2d");*/
 
 module.exports = async (message, result, Member) => {
-    let user_id = message.author.id;
+    /*let user_id = message.author.id;
     let avatar_id = message.author.avatar;
 
     let member_id = result.member_id;
@@ -113,11 +113,14 @@ module.exports = async (message, result, Member) => {
     ctx.fillStyle = "#b8f2ff";
     ctx.font = '14px "Economica Regular"';
     ctx.fillText(`EDF${member_id}`, 732, 208);
-
+    
     message.channel.send({
         content: ' ',
         file: await canvas.toBuffer(),
         filename: "profile.png",
+    });*/
+
+    message.channel.send({
+        content: '現在、プロフィール機能はメンテナンス中です。しばらくお待ちください。',
     });
 };
-*/
